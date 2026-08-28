@@ -1,101 +1,49 @@
-/**
- * main.js — Language toggle, Markdown rendering, PDF export
- *
- * Content files:
- *   content/en.md  — English CV  (edit freely)
- *   content/zh.md  — Chinese CV  (edit freely)
- *
- * The active language is persisted to localStorage under the key "lang".
- */
-
 (function () {
   'use strict';
 
-  /* ── State ──────────────────────────────────────────────────── */
-  let currentLang = localStorage.getItem('lang') || 'en';
+  const contentEl = document.getElementById('content');
 
-  /* ── DOM refs ────────────────────────────────────────────────── */
-  const resumeEl   = document.getElementById('resume');
-  const langToggle = document.getElementById('lang-toggle');
-  const pdfBtn     = document.getElementById('pdf-btn');
+  marked.use({ gfm: true, breaks: false, pedantic: false });
 
-  /* ── Marked.js renderer config ──────────────────────────────── */
-  marked.use({
-    gfm: true,
-    breaks: false,
-    pedantic: false,
-    // Sanitize is deprecated; content is author-controlled, so this is fine.
-  });
-
-  /* ── Fetch + render a markdown file ─────────────────────────── */
-  async function loadResume(lang) {
-    resumeEl.innerHTML =
-      '<div class="resume__loading">' +
-        '<span class="resume__loading-dot"></span>' +
-        '<span class="resume__loading-dot"></span>' +
-        '<span class="resume__loading-dot"></span>' +
-      '</div>';
-
+  async function loadContent() {
     try {
-      const url      = 'content/' + lang + '.md';
-      const response = await fetch(url);
+      const response = await fetch('content/en.md');
       if (!response.ok) throw new Error('HTTP ' + response.status);
-      const markdown = await response.text();
-      const html     = marked.parse(markdown);
-      resumeEl.innerHTML = html;
-      postProcess(resumeEl, lang);
-    } catch (err) {
-      console.error('[resume] Failed to load content:', err);
-      resumeEl.innerHTML =
-        '<p class="resume__error">⚠ Content could not be loaded. ' +
-        'Please ensure the <code>content/' + lang + '.md</code> file exists ' +
-        'and the page is served over HTTP (not opened as a local file).</p>';
+
+      contentEl.innerHTML = marked.parse(await response.text());
+      decoratePaperLinks();
+      decorateSectionHeadings();
+    } catch (error) {
+      console.error('[homepage] Failed to load content:', error);
+      contentEl.innerHTML =
+        '<p class="content__error">The page content could not be loaded. ' +
+        'Please open this site through a web server.</p>';
     }
   }
 
-  /* ── Post-process rendered HTML ─────────────────────────────── */
-  function postProcess(container, lang) {
-    // Tag the first <p> after <h1> as contact info
-    const h1 = container.querySelector('h1');
-    if (h1) {
-      const next = h1.nextElementSibling;
-      if (next && next.tagName === 'P') {
-        next.classList.add('contact-info');
+  function decoratePaperLinks() {
+    contentEl.querySelectorAll('a').forEach(function (link) {
+      if (link.textContent.trim() === 'Paper') {
+        link.classList.add('paper-link');
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
       }
-    }
+    });
   }
 
-  /* ── Apply language ──────────────────────────────────────────── */
-  function applyLang(lang) {
-    currentLang = lang;
-    localStorage.setItem('lang', lang);
+  function decorateSectionHeadings() {
+    const icons = {
+      Publications: '<svg viewBox="0 0 24 24"><path d="M6 3.5h8l4 4V20.5H6z"></path><path d="M14 3.5v4h4M9 12h6M9 16h6"></path></svg>',
+      'Professional Experience': '<svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"></rect><path d="M8 7V5h8v2M3 12h18M10 12v2h4v-2"></path></svg>',
+      Services: '<svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"></circle><path d="M6.5 20c.6-4 2.4-6 5.5-6s4.9 2 5.5 6M5.5 9.5a2.5 2.5 0 1 1 0-5M18.5 9.5a2.5 2.5 0 1 0 0-5M3 18c.2-2.5 1.1-4.2 2.9-5M21 18c-.2-2.5-1.1-4.2-2.9-5"></path></svg>',
+      Awards: '<svg viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v1a4 4 0 0 0 3 3.9M17 6h3v1a4 4 0 0 1-3 3.9M12 14v4M8.5 21h7M9 18h6"></path></svg>',
+    };
 
-    // Update <html> lang attribute
-    document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'zh-CN');
-
-    // Update page title
-    document.title = lang === 'en'
-      ? 'Weijie Chen — Personal Homepage'
-      : '陈维杰 — 个人主页';
-
-    // Update toggle button label (show the *other* language)
-    langToggle.querySelector('span').textContent = lang === 'en' ? '中文' : 'English';
-
-    // Load content
-    loadResume(lang);
+    contentEl.querySelectorAll('h2').forEach(function (heading) {
+      const icon = icons[heading.textContent.trim()];
+      if (icon) heading.insertAdjacentHTML('afterbegin', '<span class="section-icon" aria-hidden="true">' + icon + '</span>');
+    });
   }
 
-  /* ── Language toggle handler ─────────────────────────────────── */
-  langToggle.addEventListener('click', function () {
-    applyLang(currentLang === 'en' ? 'zh' : 'en');
-  });
-
-  /* ── PDF export handler ──────────────────────────────────────── */
-  pdfBtn.addEventListener('click', function () {
-    window.print();
-  });
-
-  /* ── Initialise ──────────────────────────────────────────────── */
-  applyLang(currentLang);
-
+  loadContent();
 })();

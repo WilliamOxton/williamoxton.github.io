@@ -1,93 +1,66 @@
-# Weijie Chen
+I am currently a dual-Ph.D. student at the School of Cyber Science and Engineering, Huazhong University of Science and Technology (HUST), and the Department of Computing, The Hong Kong Polytechnic University (PolyU), advised by Prof. Weizhong Qiang and Prof. Xiapu Luo. I received my M.Eng. in Cybersecurity from HUST in 2024 and my B.Eng. in Information Security from HUST in 2021.
 
-weijie_chen@hust.edu.cn &nbsp;·&nbsp; Shenzhen, Guangdong (Permanent) &nbsp;·&nbsp; Wuhan, Hubei (Current)
+My research interests lie in system and hardware security, with a current focus on RowHammer vulnerabilities in DRAM and their system-level implications. More broadly, I study microarchitectural side-channel attacks, hardware vulnerability exploitation / mitigation, and confidential computing.
 
-## Education
+## Publications
 
-### 2024 – Present
+### &rho;Hammer: Reviving RowHammer Attacks on New Architectures via Prefetching (MICRO'25)
 
-**Ph.D. Candidate**, School of Cyber Science and Engineering (CSE), Huazhong University of Science and Technology (HUST)
+<p class="publication-authors"><strong class="author-highlight">Weijie Chen</strong>, Shan Tang, Yulin Tang, Xiapu Luo, Yinqian Zhang, and Weizhong Qiang</p>
 
-Major: Cyber Security · Area: System Security · Supervisor: Prof. Weizhong Qiang
+[Paper](https://arxiv.org/pdf/2510.16544) &nbsp; <a class="code-link" href="https://github.com/rhohammer/rhohammer" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3A12 12 0 0 0 8.2 23.7c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.4 4.9 18.4 5.2 18.4 5.2c.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.3.7 1 .7 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"></path></svg>Code</a>
 
-### 2021 – 2024
+### Lattice: Enabling Scalable Enclaves for Commercial RISC-V Platforms (TACO'26)
 
-**M.Eng.** (Exam Exemption), CSE, HUST
+<p class="publication-authors">Yu Zhao, Jiabel He, Mingru Xu, <strong class="author-highlight">Weijie Chen</strong>, Weizhong Qiang, and Deqing Zou</p>
 
-Major: Cyber Security · Supervisor: Prof. Weizhong Qiang · GPA: 3.49/4.0
+<span class="paper-link paper-link--tbd">Paper (TBD)</span>
 
-### 2017 – 2021
+### VeriExist: Blockchain-Assisted Existence-Verifiable Protocol in User-Centric Data Sharing (DSN'26)
 
-**B.Eng.**, CSE (formerly School of Computer Science), HUST
+<p class="publication-authors">Rui Han, Weizhong Qiang, <strong class="author-highlight">Weijie Chen</strong>, and Yulin Tang</p>
 
-Major: Information Security · GPA: 3.74/4.0
+<span class="paper-link paper-link--tbd">Paper (TBD)</span>
 
-## About Me
+### ReminISCence: Trusted Monitoring Against Privileged Preemption Side-channel Attacks (ESORICS'24)
 
-My research interests involve system/architectural security, micro-architectural side-channel/hardware vulnerability exploitation & mitigation, information privacy, and confidential computing. My future research plan also covers the micro-architectural security of heterogeneous systems in ML and graphics applications.
+<p class="publication-authors"><strong class="author-highlight">Weijie Chen</strong>, Yu Zhao, Yinqian Zhang, Weizhong Qiang, Deqing Zou, and Hai Jin</p>
 
-Strong aptitude for independent thinking, teamwork, and communication, with a solid grasp of both English academic reading/writing and oral expression.
+[Paper](https://dl.acm.org/doi/10.1007/978-3-031-70903-6_2)
 
-Previously worked in a national/provincial key laboratory for 2+ years, gaining rich research experience as well as project application and management skills.
+### Owl: Differential-based Side-Channel Leakage Detection for CUDA Applications (DSN'24)
 
-> *Sic Parvis Magna* — greatness comes from tiny deeds.
+<p class="publication-authors">Yu Zhao, Wenjie Xue, <strong class="author-highlight">Weijie Chen</strong>, Weizhong Qiang, Deqing Zou, and Hai Jin</p>
 
-## Skills
+[Paper](https://dsn2024uq.github.io/Proceedings/pdfs/DSN2024-6rvE3SSpzFYmysif75Dkid/410500a362/410500a362.pdf) &nbsp; <a class="code-link" href="https://github.com/OwlCudaSCDetector/Owl" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3A12 12 0 0 0 8.2 23.7c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.8.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.4 4.9 18.4 5.2 18.4 5.2c.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.3.7 1 .7 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"></path></svg>Code</a>
 
-**English** — GRE (2020): Reasoning 320/340 + Writing 4.0/6.0; TOEFL: 100; National Qualification for Translator and Interpreter (Level-3 Written Translation, 2024)
+### Universal Patching Method for Side-Channel Vulnerabilities Based on Atomic Obfuscation (CJNIS'22)
 
-**Coding** — Primarily C/C++/Assembly; proficient in Python, shell scripting, and Linux systems
+<p class="publication-authors">Deqing Zou, Pan Zhang, Wei Liu, <strong class="author-highlight">Weijie Chen</strong>, and Yifan Lu</p>
 
-**Architecture** — Well-versed in the RISC-V ISA and its specifications; familiar with LLVM and pass-based compiler customization
+## Professional Experience
 
-## Research Publications
+### 2025 – 2026 · Student Innovation Funding Program for Schools of Cyberspace Security
 
-1. W. Chen, S. Tang, Y. Tang, X. Luo, Y. Zhang, and W. Qiang, *under review* in the 58th IEEE/ACM International Symposium on Microarchitecture (**MICRO'25**, CCF-A, Top-tier), 2025.
+Modeling microarchitectural attacks on modern processors in a project sponsored by Huawei Technologies Co., Ltd.
 
-2. R. Han, W. Chen, Y. Tang, and W. Qiang, planned submission to a CCF-B conference, 2025.
+### 2023 · Research Intern, Teecert Lab, Southern University of Science and Technology
 
-3. W. Chen, Y. Zhao, Y. Zhang, W. Qiang, D. Zou, and H. Jin, "ReminISCence: Trusted Monitoring Against Privileged Preemption Side-channel Attacks," in *Proceedings of the 29th European Symposium on Research in Computer Security* (**ESORICS'24**, CCF-B), Bydgoszcz, Poland, 2024.
+Advised by <strong class="author-highlight">Prof. Yinqian Zhang</strong>.
 
-4. Y. Zhao, W. Xue, W. Chen, W. Qiang, D. Zou, and H. Jin, "Owl: Differential-based Side-Channel Leakage Detection for CUDA Applications," in *Proceedings of the 54th Annual IEEE/IFIP International Conference on Dependable Systems and Networks* (**DSN'24**, CCF-B), Brisbane, Australia, 2024.
+## Services
 
-5. D. Zou, P. Zhang, W. Liu, W. Chen, and Y. Lu, "Universal patching method for side-channel vulnerabilities based on atomic obfuscation," *Chinese Journal of Network and Information Security*, vol. 8(02), pp. 100–111, 2022.
-
-## Project Experience
-
-### 2023
-
-**Research Intern**, RITAS Lab, Southern University of Science and Technology (SUSTech)
-
-Conducted research on micro-architectural side-channel monitoring on RISC-V, advised by Prof. Yinqian Zhang at the Teecert Lab. The resulting work was accepted at ESORICS'24.
-
-### 2023 – Present
-
-**Key Contributor**, NSFC Grant No. 62272181 (National Natural Science Foundation of China)
-
-Side-channel detection and defense for the trusted execution environment of heterogeneous computing systems.
-
-### 2024 – Present
-
-**Key Contributor / Principal Investigator**, Internal Project on Rowhammer Attacks
-
-One major work submitted to **MICRO'25** (Top-tier computer architecture conference), in collaboration with Prof. Xiapu Luo (Hong Kong PolyU) and Prof. Yinqian Zhang (SUSTech).
+- Reviewer, *IEEE Transactions on Dependable and Secure Computing*, 2026.
+- Reviewer, *IEEE/ACM Transactions on Networking*, 2026.
+- Teaching Assistant, *Artificial Intelligence* (MSc. course), PolyU.
+- Teaching Assistant, *Metaverse Fundamentals* (BSc. course), PolyU.
 
 ## Awards
 
-- **2024** — 3rd-class Scholarship for Doctoral Students, HUST
-- **2023** — 1st-class Scholarship for Postgraduates, HUST
-- **2022** — 2nd-class Scholarship for Postgraduates, HUST
-- **2021** — 1st-class Scholarship for Postgraduates, HUST
-- **2019** — Outstanding Undergraduate, HUST
-- **2019** — Scholarship for Academic Progress, HUST
-- **2019** — 2nd-class Mingde Scholarship, HUST
-
-## Student Work
-
-- **2018 – 2019** — Vice President, Publicity Department, School of Computer Science Student Union, HUST
-- **2020 – 2021** — President, Academic & Career Development Department, School of Cyber Science and Engineering Student Union, HUST
-- **2024 – Present** — Class Monitor (administrative affairs), Ph.D. cohort
-
-## Hobbies
-
-Beyond research, I love seeking multi-disciplinary knowledge from fields like biology and chemistry — I received two provincial first prizes and a national third prize during high school. I am a huge enthusiast of music theory and have good proficiency in piano. For sports, I enjoy swimming and maintain a regular fitness routine.
+- **2026** — Best Poster Presentation Award, PolyU COMP – HIT (ShenZhen) CST Research Student Conference.
+- **2025** — MICRO'25 Student Travel Grant, ACM SigMICRO.
+- **2025** — Outstanding Student Scholarship, CSE, HUST.
+- **2025** — Science and Technology Innovation Scholarship, CSE, HUST.
+- **2023** — 1st-class Scholarship for Postgraduates, HUST.
+- **2021** — 1st-class Scholarship for Postgraduates, HUST.
+- **2021** — Outstanding Undergraduate, HUST.
